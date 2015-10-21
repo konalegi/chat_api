@@ -53,3 +53,5 @@ end
 
 #Api gems
 gem 'active_model_serializers'
+
+gem 'bcrypt-ruby', '3.1.2'
