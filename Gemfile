@@ -46,12 +46,6 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails"
   gem "factory_girl_rails"
   gem 'ffaker'
 end
-
-#Api gems
-gem 'active_model_serializers'
-
-gem 'bcrypt-ruby', '3.1.2'
