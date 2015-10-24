@@ -1,0 +1,14 @@
+user_one:
+  id: 1
+  chats: chat_one, chat_two
+  messages: message_one, message_three
+
+user_two:
+  id: 2
+  chats: chat_one, chat_two
+  messages: message_two, message_four
+
+user_three:
+  id: 3
+  chats: chat_two
+  messages: message_five
