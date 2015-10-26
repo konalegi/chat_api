@@ -7,6 +7,7 @@ class API::V1::MessagesController < ApplicationController
   end
 
   def create
+    set_chat
     @message = current_user.messages.build(message_params)
     if @message.save
       render json: @message, status: :created
@@ -16,6 +17,18 @@ class API::V1::MessagesController < ApplicationController
   end
 
   private
+
+    def set_chat
+      unless params[:chat_id]
+        @current_chat = Chat.find_chat_for(current_user.id, params[:receiver].id)
+        if @current_chat
+          params[:chat_id] = @current_chat.id
+        else
+          @current_chat = Chat.create(users: { id: [current_user.id, params[:receiver].id] })
+          params[:chat_id] = @current_chat.id
+        end
+      end
+    end
 
     def message_params
       params.require(:message).permit(:text, :user_id, :chat_id)
