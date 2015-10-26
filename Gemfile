@@ -49,3 +49,5 @@ group :test do
   gem "factory_girl_rails"
   gem 'ffaker'
 end
+
+gem 'will_paginate'
