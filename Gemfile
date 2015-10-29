@@ -51,3 +51,4 @@ group :test do
 end
 
 gem 'will_paginate'
+gem 'active_model_serializers'
