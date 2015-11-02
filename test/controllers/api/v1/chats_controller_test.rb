@@ -2,8 +2,8 @@ require 'test_helper'
 
 class API::V1::ChatsControllerTest < ActionController::TestCase
   test "index" do
-    user = User.create(create_user
-    authenticate(user)
+    user = User.create
+    authenticate
 
     get :index, { format: :json }
     assert_response :success

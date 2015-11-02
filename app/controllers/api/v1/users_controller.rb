@@ -1,5 +1,2 @@
-class UsersController < ApplicationController
-  def current_user
-    User.find(TOKEN[:token])
-  end
+class API::V1::UsersController < API::V1::ApplicationController
 end
