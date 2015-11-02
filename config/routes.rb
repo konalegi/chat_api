@@ -1,12 +1,8 @@
-require 'api_constraints'
-
-Rails.application.routes.draw do
+ChatApi::Application.routes.draw do
   # Api definition"
-  namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/' do
-    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-      scope module: :chats do
-        resources :chats, only: [:index, :create, :show]
-      end
+  namespace :api, defaults: { format: :json }, path: '/' do
+    scope module: :v1 do
+      resources :chats, only: [:index, :create, :show]
     end
   end
 end
