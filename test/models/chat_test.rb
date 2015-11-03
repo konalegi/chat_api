@@ -6,6 +6,7 @@ class ChatTest < ActiveSupport::TestCase
     @recipient = FactoryGirl.create(:user, name: "RecipientName")
     @chat = Chat.create
     @chat.users << [@sender, @recipient]
+
     @found_chat = @chat.find_chat_for(@sender, @recipient)
     assert_equal @chat, @found_chat
   end
