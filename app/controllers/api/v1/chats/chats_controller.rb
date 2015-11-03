@@ -16,6 +16,8 @@ class API::V1::ChatsController < API::V1::ApplicationController
   end
 
   def create
-    @chats = Chat
+  end
+
+  def destroy
   end
 end

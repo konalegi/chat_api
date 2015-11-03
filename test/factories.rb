@@ -12,4 +12,9 @@ FactoryGirl.define do
     user_id 1
     chat_id 1
   end
+
+  factory :session do
+    user_id 1
+    token "first"
+  end
 end
