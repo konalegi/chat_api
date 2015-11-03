@@ -19,7 +19,6 @@ class API::V1::ApplicationController < ActionController::Base
     else
       raise Forbidden, "You are not allowed to access."
     end
-
   end
 
   def authenticate
